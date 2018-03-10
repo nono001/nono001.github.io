@@ -27,26 +27,81 @@
 
 	<div class="container">
 		<div class="box">
-			<div><img src="img/5.jpg"></div>
-			<div><img src="img/plus.jpg"></div>
-			<div><img src="img/3.jpg"></div>
+			<div><img src="img/5.jpg" id="first_digit"></div>
+			<div><img src="img/plus.jpg" id="operation"></div>
+			<div><img src="img/3.jpg" id="second_digit"></div>
 			<div><img src="img/equal.jpg"></div>
 			<div class="computer droppable"></div>
 		</div>
 	</div>	
 
 	<div style="height:80px">
-		<img src="img/0.jpg" class="draggable">
-		<img src="img/1.jpg" class="draggable">
-		<img src="img/2.jpg" class="draggable">
-		<img src="img/3.jpg" class="draggable">
-		<img src="img/4.jpg" class="draggable">
-		<img src="img/5.jpg" class="draggable">
-		<img src="img/6.jpg" class="draggable">
-		<img src="img/7.jpg" class="draggable">
-		<img src="img/8.jpg" class="draggable">
-		<img src="img/9.jpg" class="draggable">
+		<img src="img/0.jpg" class="draggable" name="zero">
+		<img src="img/1.jpg" class="draggable" name="one">
+		<img src="img/2.jpg" class="draggable" name="two">
+		<img src="img/3.jpg" class="draggable" name="three">
+		<img src="img/4.jpg" class="draggable" name="four">
+		<img src="img/5.jpg" class="draggable" name="five">
+		<img src="img/6.jpg" class="draggable" name="six">
+		<img src="img/7.jpg" class="draggable" name="seven">
+		<img src="img/8.jpg" class="draggable" name="eight">
+		<img src="img/9.jpg" class="draggable" name="nine">
+		<input type="button" id="next_priklad" value="Н А С Т У П Н И Й" />
 	</div>
+
+	<script>
+	
+		var result = 0;
+	
+		next_priklad.onclick = function(){
+
+			var randA = randomInteger(0, 9);
+			var a = document.getElementById("first_digit");
+			a.src = digitRandName(randA);
+			
+			var randB = randomInteger(0, 9);
+			var b = document.getElementById("second_digit");
+			b.src = digitRandName(randB);
+			
+			var zn = document.getElementById("operation");
+			if (randomInteger(0, 1)){
+				zn.src = "img/minus.jpg";
+				result = randA - randB;
+			}
+			else{
+				zn.src = "img/plus.jpg";
+				result = randA + randB;
+			}
+		
+			alert(result);
+		}
+		
+		function randomInteger(min, max) {
+			var rand = min + Math.random() * (max - min)
+			rand = Math.round(rand);
+			return rand;
+		}
+		
+		function digitRandName(randA){
+			
+			switch(randA){
+				case 0: numA = "img/0.jpg"; break;
+				case 1: numA = "img/1.jpg"; break;
+				case 2: numA = "img/2.jpg"; break;
+				case 3: numA = "img/3.jpg"; break;
+				case 4: numA = "img/4.jpg"; break;
+				case 5: numA = "img/5.jpg"; break;
+				case 6: numA = "img/6.jpg"; break;
+				case 7: numA = "img/7.jpg"; break;
+				case 8: numA = "img/8.jpg"; break;
+				case 9: numA = "img/9.jpg"; break;
+				default: numA = "img/5.jpg"; break;
+			}
+			return	numA;		
+		}
+		
+		
+	</script>
 	
 </body>
 

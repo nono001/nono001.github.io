@@ -57,6 +57,8 @@ var DragManager = new function() {
       startDrag(e); // отобразить начало переноса
     }
 
+	//alert(dragObject.elem.name);
+	
     // отобразить перенос объекта при каждом движении мыши
     dragObject.avatar.style.left = e.pageX - dragObject.shiftX + 'px';
     dragObject.avatar.style.top = e.pageY - dragObject.shiftY + 'px';
