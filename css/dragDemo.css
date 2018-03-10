@@ -1,0 +1,27 @@
+.computer {
+  width: 80px;
+  height: 80px;
+  background: url(../img/round.jpg) no-repeat;
+  padding: 0px;
+  font-style: italic;
+}
+
+.digit {
+  width: 80px;
+  height: 80px;
+  background: url(../img/5.jpg) no-repeat;
+  padding: 0px;
+  font-style: italic;
+}
+
+.computer-smile {
+  background: url(../img/round.jpg) no-repeat;
+}
+
+.draggable {
+  cursor: pointer;
+}
+
+.container{overflow:hidden;width:800px}
+.box{white-space:nowrap}
+.box div{width:80px;display:inline-block;}

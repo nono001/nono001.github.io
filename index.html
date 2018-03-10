@@ -1,13 +1,53 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<title>T E S T</title>
-	</head>
-	<body>
-		<div>
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-			<center><h1>T E S T</h1></center>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.polyfill.io/v1/polyfill.js?features=Element.prototype.closest"></script>
+  <script src="js/DragManager.js"></script>
+  <link rel="stylesheet" href="css/dragDemo.css">
+  <script>
+    DragManager.onDragCancel = function(dragObject) {
+      dragObject.avatar.rollback();
+    };
+
+    DragManager.onDragEnd = function(dragObject, dropElem) {
+      dragObject.elem.style.display = 'none';
+      dropElem.classList.add('computer-smile');
+      setTimeout(function() {
+        dropElem.classList.remove('computer-smile');
+      }, 200);
+    };
+  </script>
+</head>
+
+<body>
+
+  <p><h1>Обчисли:</h1></p>
+
+	<div class="container">
+		<div class="box">
+			<div><img src="img/5.jpg"></div>
+			<div><img src="img/plus.jpg"></div>
+			<div><img src="img/3.jpg"></div>
+			<div><img src="img/equal.jpg"></div>
+			<div class="computer droppable"></div>
 		</div>
-	</body>
-</html>
+	</div>	
+
+	<div style="height:80px">
+		<img src="img/0.jpg" class="draggable">
+		<img src="img/1.jpg" class="draggable">
+		<img src="img/2.jpg" class="draggable">
+		<img src="img/3.jpg" class="draggable">
+		<img src="img/4.jpg" class="draggable">
+		<img src="img/5.jpg" class="draggable">
+		<img src="img/6.jpg" class="draggable">
+		<img src="img/7.jpg" class="draggable">
+		<img src="img/8.jpg" class="draggable">
+		<img src="img/9.jpg" class="draggable">
+	</div>
 	
+</body>
+
+</html>
